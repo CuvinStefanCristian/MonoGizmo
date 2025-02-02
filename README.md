@@ -11,6 +11,10 @@ Currently implemented:
 - 2 coordinate systems: `World`, `Local`
 - Customize Gizmo size and color
 
+Future ideeas:
+- Grid System (guides / snap to grid)
+- Step Transforms (how much things should move! currently the mouse dictates the ammount of movement, not very precises is it..)
+
 ### How it works
 The Gizmos are controlled by a class names `GizmoManager`. Besides Updating and Rendering the Gizmos, this class also contains the Selection functionality of the entities that inherit the `ISelectable` interface.
 The entities are checked for mouse clicks and intersections once they are added to the `Selectables` property of the manager. A QuadTree is used for optimizing the selection process.
