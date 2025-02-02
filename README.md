@@ -1,6 +1,8 @@
 # MonoGizmo
 A simple and esy to use 2D Gizmo library for MonoGame. The package is build on `netstandard2.1` and the graphics have been created using the amazing library [Apos.Shapes](https://github.com/Apostolique/Apos.Shapes)
 
+[Nuget](https://www.nuget.org/packages/MonoGizmo/0.9.0)
+
 ![Demo](https://github.com/CuvinStefanCristian/MonoGizmo/blob/master/Resources/MonoGizmo-Demo.gif)
 
 ## Features
