@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Package references -->
+  <ItemGroup>
+    <PackageReference Include="Apos.Shapes" Version="0.3.0" />
+	<PackageReference Include="MonoGame.Framework.DesktopGL" PrivateAssets="All" Version="3.8.0.1641" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Content Include="MonoGizmo.props" PackagePath="build/" />
+
+		<None Include="Content/apos-shapes.fx">
+			<Pack>true</Pack>
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+			<PackageFlatten>true</PackageFlatten>
+			<PackagePath>build/Content/</PackagePath>
+		</None>
+		<None Include="Content/Content.mgcb">
+			<Pack>true</Pack>
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+			<PackageFlatten>true</PackageFlatten>
+			<PackagePath>build/Content/</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Licenses\AposShapse_License.txt">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<Pack>true</Pack>
+        <PackagePath>licenses\</PackagePath>
+	  </None>
+	</ItemGroup>
+</Project>
