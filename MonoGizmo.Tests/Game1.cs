@@ -17,6 +17,7 @@ namespace MonoGizmo.Tests
 
         GizmoManager _gizmoManager;
         List<Selectable> _selectables;
+        bool _keyDown = false;
 
         public Game1()
         {
@@ -62,11 +63,6 @@ namespace MonoGizmo.Tests
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 Exit();
 
-            if (Keyboard.GetState().IsKeyDown(Keys.NumPad0))
-                Mouse.SetCursor(MouseCursor.Arrow);
-            if (Keyboard.GetState().IsKeyDown(Keys.NumPad1))
-                Mouse.SetCursor(MouseCursor.Hand);
-
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 _gizmoManager.ClearSelection();
 
@@ -75,23 +71,60 @@ namespace MonoGizmo.Tests
             if (Keyboard.GetState().IsKeyDown(Keys.F1))
                 _gizmoManager.TransformType = MonoGizmo.Enums.TransformType.World;
 
-            if (Keyboard.GetState().IsKeyDown(Keys.OemMinus) && !test)
+            var keyboardState = Keyboard.GetState();
+
+            if (keyboardState.IsKeyDown(Keys.NumPad0) && !_keyDown)
             {
-                _selectables.RemoveAt(2);
-                _gizmoManager.CheckCollection();
-                test = true;
+                if (_gizmoManager.IsTypeActive(GizmoType.Origin))
+                    _gizmoManager.DeactivateType(GizmoType.Origin);
+                else
+                    _gizmoManager.ActivateType(GizmoType.Origin);
+
+                _keyDown = true;
+            }
+            if (keyboardState.IsKeyDown(Keys.NumPad1) && !_keyDown)
+            {
+                if (_gizmoManager.IsTypeActive(GizmoType.Translate))
+                    _gizmoManager.DeactivateType(GizmoType.Translate);
+                else
+                    _gizmoManager.ActivateType(GizmoType.Translate);
+
+                _keyDown = true;
+            }
+            if (keyboardState.IsKeyDown(Keys.NumPad2) && !_keyDown)
+            {
+                if (_gizmoManager.IsTypeActive(GizmoType.Rotate))
+                    _gizmoManager.DeactivateType(GizmoType.Rotate);
+                else
+                    _gizmoManager.ActivateType(GizmoType.Rotate);
+
+                _keyDown = true;
+            }
+            if(keyboardState.IsKeyDown(Keys.NumPad3) && !_keyDown)
+            {
+                if (_gizmoManager.IsTypeActive(GizmoType.Scale))
+                    _gizmoManager.DeactivateType(GizmoType.Scale);
+                else
+                    _gizmoManager.ActivateType(GizmoType.Scale);
+                _keyDown = true;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+
+            if (keyboardState.IsKeyUp(Keys.NumPad1) && keyboardState.IsKeyUp(Keys.NumPad2) && keyboardState.IsKeyUp(Keys.NumPad3))
+            {
+                _keyDown = false;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.Left))
                 foreach (var selectable in _selectables)
                     selectable.Center -= new Vector2(1, 0);
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            if (keyboardState.IsKeyDown(Keys.Right))
                 foreach (var selectable in _selectables)
                     selectable.Center += new Vector2(1, 0);
-            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            if (keyboardState.IsKeyDown(Keys.Up))
                 foreach (var selectable in _selectables)
                     selectable.Center -= new Vector2(0, 1);
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            if (keyboardState.IsKeyDown(Keys.Down))
                 foreach (var selectable in _selectables)
                     selectable.Center += new Vector2(0, 1);
 

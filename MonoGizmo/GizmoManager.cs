@@ -8,6 +8,7 @@ using MonoGizmo.DataStructures;
 using MonoGizmo.Enums;
 using MonoGizmo.Gizmos;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MonoGizmo
 {
@@ -112,14 +113,32 @@ namespace MonoGizmo
         {
             foreach (var gizmo in _gizmos)
                 if (gizmo.GizmoType == gizmoType)
+                {
                     gizmo.IsActive = true;
+
+                    if (_selected != null)
+                        gizmo.Attach(_selected);
+                }
         }
 
         public void DeactivateType(GizmoType gizmoType) 
-        {  
+        {
             foreach (var gizmo in _gizmos)
                 if (gizmo.GizmoType == gizmoType)
+                {
                     gizmo.IsActive = false;
+
+                    if (_selected != null)
+                        gizmo.Detach();
+                }
+        }
+
+        public bool IsTypeActive(GizmoType gizmoType)
+        {
+            foreach (var gizmo in _gizmos)
+                if (gizmo.GizmoType == gizmoType)
+                    return gizmo.IsActive;
+            return false;
         }
 
         public void ClearSelection()
@@ -129,7 +148,7 @@ namespace MonoGizmo
                     gizmo.Detach();
         }
 
-        public void CheckCollection()
+        internal void CheckCollection()
         {
             if (_selected == null)
                 return;
@@ -155,17 +174,35 @@ namespace MonoGizmo
         {
             foreach (var gizmo in _gizmos)
                 if (!gizmo.IsToggled)
-                    DeactivateType(gizmo.GizmoType);
+                    gizmo.Detach();
 
             _canSelect = true;
         }
 
         internal void EnableAll()
         {
-            foreach (var gizmo in _gizmos)
-                ActivateType(gizmo.GizmoType);
+            foreach (var gizmo in _gizmos.Where(g => g.IsActive))
+                if (!gizmo.IsToggled)
+                    gizmo.Attach(_selected);
 
             _canSelect = false;
         }
+
+        //internal void DisableAll()
+        //{
+        //    foreach (var gizmo in _gizmos)
+        //        if (!gizmo.IsToggled)
+        //            DeactivateType(gizmo.GizmoType);
+
+        //    _canSelect = true;
+        //}
+
+        //internal void EnableAll()
+        //{
+        //    foreach (var gizmo in _gizmos.Where(g => g.IsActive))
+        //        ActivateType(gizmo.GizmoType);
+
+        //    _canSelect = false;
+        //}
     }
 }
