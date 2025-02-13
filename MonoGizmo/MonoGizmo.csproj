@@ -1,29 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
   </PropertyGroup>
 
   <!-- Package references -->
   <ItemGroup>
-    <PackageReference Include="Apos.Shapes" Version="0.3.0" />
-	<PackageReference Include="MonoGame.Framework.DesktopGL" PrivateAssets="All" Version="3.8.0.1641" />
+    <PackageReference Include="MonoGame.Framework.Content.Pipeline" Version="3.8.2.1105" GeneratePathProperty="true" />
+	<PackageReference Include="MonoGame.Framework.DesktopGL" PrivateAssets="All" Version="3.8.2.1105" />
   </ItemGroup>
 
 	<ItemGroup>
-		<Content Include="MonoGizmo.props" PackagePath="build/" />
-
-		<None Include="Content/apos-shapes.fx">
-			<Pack>true</Pack>
-			<PackageCopyToOutput>true</PackageCopyToOutput>
-			<PackageFlatten>true</PackageFlatten>
-			<PackagePath>build/Content/</PackagePath>
-		</None>
-		<None Include="Content/Content.mgcb">
-			<Pack>true</Pack>
-			<PackageCopyToOutput>true</PackageCopyToOutput>
-			<PackageFlatten>true</PackageFlatten>
-			<PackagePath>build/Content/</PackagePath>
-		</None>
+		<Content Include="$(PkgMonoGame_Framework_Content_Pipeline)\content\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>

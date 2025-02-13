@@ -35,7 +35,7 @@ namespace MonoGizmo.Tests
             var s1 = new Selectable(new Rectangle(20, 30, 200, 100), Vector2.One, 0);
             var s2 = new Selectable(new Rectangle(50, 98, 100, 100), Vector2.One, 0);
             _selectables = [s1, s2];
-            _gizmoManager = new GizmoManager(GraphicsDevice, Content)
+            _gizmoManager = new GizmoManager(GraphicsDevice)
             {
                 Selectables = _selectables.Where(x => x.GetType() == typeof(Selectable)).Select(x => (ISelectable)x),
             };
@@ -46,7 +46,7 @@ namespace MonoGizmo.Tests
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            _shapeBatch = new ShapeBatch(GraphicsDevice, Content);
+            _shapeBatch = new ShapeBatch(GraphicsDevice);
 
             _gizmoManager.ActivateType(GizmoType.Origin);
             _gizmoManager.ActivateType(GizmoType.Translate);

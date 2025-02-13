@@ -40,9 +40,9 @@ namespace MonoGizmo
             }
         }
 
-        public GizmoManager(GraphicsDevice graphicsDevice, ContentManager contentManager, GizmoOptions gizmoOptions = null)
+        public GizmoManager(GraphicsDevice graphicsDevice, GizmoOptions gizmoOptions = null)
         {
-            _shapeBatch = new ShapeBatch(graphicsDevice, contentManager);
+            _shapeBatch = new ShapeBatch(graphicsDevice);
 
             gizmoOptions ??= new GizmoOptions();
             Options = gizmoOptions;
