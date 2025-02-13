@@ -1,6 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+	<PackageId>MonoGizmo</PackageId>
+	<Version>0.9.0</Version>
+	  <Authors>Stefan Cuvin</Authors>
+	  <Company>Stefan Cuvin</Company>
+	  <Product>MonoGizmo</Product>
+	  <Title>MonoGizmo</Title>
+	  <PackageDescription>A simple and easy to use 2D Gizmo library for MonoGame</PackageDescription>
+	  <PackageProjectUrl>https://github.com/CuvinStefanCristian/MonoGizmo</PackageProjectUrl>
+	  <PackageTags>monogame;gizmo;gizmos;editor</PackageTags>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <Description>A simple and easy to use 2D Gizmo library for MonoGame</Description>
+	  <PackageIcon>1f3e05db83f249568a90bc00b870f7da34da0b2b.png</PackageIcon>
+	  <RepositoryUrl>https://github.com/CuvinStefanCristian/MonoGizmo</RepositoryUrl>
+	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <!-- Package references -->
