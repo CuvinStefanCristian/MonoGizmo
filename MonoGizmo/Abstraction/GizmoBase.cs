@@ -1,7 +1,7 @@
-﻿using Apos.Shapes;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using MonoGizmo.Enums;
+using MonoGizmo.Graphics;
 
 namespace MonoGizmo.Abstraction
 {

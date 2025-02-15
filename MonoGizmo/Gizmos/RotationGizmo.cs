@@ -1,9 +1,9 @@
-﻿using Apos.Shapes;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using MonoGizmo.Abstraction;
 using MonoGizmo.DataStructures;
 using MonoGizmo.Enums;
+using MonoGizmo.Graphics;
 using System;
 
 namespace MonoGizmo.Gizmos
