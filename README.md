@@ -1,8 +1,8 @@
 # MonoGizmo
 A simple and esy to use 2D Gizmo library for MonoGame. The package is build on `netstandard2.1` and the graphics have been created using the amazing library [Apos.Shapes](https://github.com/Apostolique/Apos.Shapes)
+Now with [MonoGame.Forms](https://github.com/BlizzCrafter/MonoGame.Forms) support ! (check version 1.0.1)
 
-~~[Nuget](https://www.nuget.org/packages/MonoGizmo/0.9.0)~~ -> The nuget package fails to load a required FX file from AposShapes resulting in startup errors. Download the project and reference it in your own program.
-WORKAROUND: Download the aposshapes.fx file and load it into your own Contet file. This will make sure it is being compiled correctly to your own Graphics profile.
+[Nuget](https://www.nuget.org/packages/MonoGizmo/0.9.0)
 
 ![Demo](https://github.com/CuvinStefanCristian/MonoGizmo/blob/master/Resources/MonoGizmo-Demo.gif)
 
