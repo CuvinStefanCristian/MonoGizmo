@@ -3,7 +3,7 @@ A simple and esy to use 2D Gizmo library for MonoGame. The package is build on `
 
 Now with [MonoGame.Forms](https://github.com/BlizzCrafter/MonoGame.Forms) support ! (check version 1.0.1)
 
-[Nuget](https://www.nuget.org/packages/MonoGizmo/0.9.0)
+[Nuget](https://www.nuget.org/packages/MonoGizmo/1.0.1)
 
 ![Demo](https://github.com/CuvinStefanCristian/MonoGizmo/blob/master/Resources/MonoGizmo-Demo.gif)
 
