@@ -34,7 +34,16 @@ namespace MonoGizmo.Graphics
             // Get the MonoGame.Framework assembly
             var monogameAssembly = AppDomain.CurrentDomain
                                           .GetAssemblies()
-                                          .FirstOrDefault(a => a.GetName().Name == "MonoGame.Framework") ?? throw new Exception("MonoGame.Framework assembly not found");
+                                          .FirstOrDefault(a => a.GetName().Name == "MonoGame.Framework");
+
+            if( monogameAssembly == null )
+            {
+                monogameAssembly = AppDomain.CurrentDomain
+                                          .GetAssemblies()
+                                          .FirstOrDefault(a => a.GetName().Name == "MonoGame.Forms.NET") ?? throw new Exception("No MonoGame packages detected");
+
+                return "MonoGizmo.Content.apos-shapes.DirectX.xnb";
+            }
 
             // Check for OpenGL-specific type
             bool isOpenGL = monogameAssembly.GetType("MonoGame.OpenGL.GL") != null;
