@@ -18,9 +18,6 @@
   </PropertyGroup>
 
   <!-- Package references -->
-  <ItemGroup>
-    <PackageReference Include="MonoGame.Framework.DesktopGL" PrivateAssets="All" Version="3.8.0.1641" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Update="Content\apos-shapes.DirectX.xnb">
@@ -45,9 +42,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="C:\Users\crist\Desktop\MonoGizmo_icon.png">
+	  <None Include="F:\Programming\MonoGizmo\MonoGizmo\MonoGizmo_icon.png">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4" />
 	</ItemGroup>
 </Project>
