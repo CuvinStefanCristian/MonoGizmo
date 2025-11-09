@@ -7,6 +7,9 @@ Now with [MonoGame.Forms](https://github.com/BlizzCrafter/MonoGame.Forms) suppor
 
 ![Demo](https://github.com/CuvinStefanCristian/MonoGizmo/blob/master/Resources/MonoGizmo-Demo.gif)
 
+### NEWS
+A majour overhaul will take place soon !
+
 ## Features
 For the moment only basic gizmo functionality is available but more functionality is expected in the future.
 
