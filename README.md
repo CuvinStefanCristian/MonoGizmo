@@ -1,8 +1,9 @@
 # MonoGizmo
 A simple and esy to use 2D Gizmo library for MonoGame. The package is build on `netstandard2.1` and the graphics have been created using the amazing library [Apos.Shapes](https://github.com/Apostolique/Apos.Shapes)
 
-~~[Nuget](https://www.nuget.org/packages/MonoGizmo/0.9.0)~~ -> The nuget package fails to load a required FX file from AposShapes resulting in startup errors. Download the project and reference it in your own program.
-WORKAROUND: Download the aposshapes.fx file and load it into your own Contet file. This will make sure it is being compiled correctly to your own Graphics profile.
+Now with [MonoGame.Forms](https://github.com/BlizzCrafter/MonoGame.Forms) support ! (check version 1.0.1)
+
+[Nuget](https://www.nuget.org/packages/MonoGizmo/1.0.1)
 
 ![Demo](https://github.com/CuvinStefanCristian/MonoGizmo/blob/master/Resources/MonoGizmo-Demo.gif)
 
@@ -17,6 +18,9 @@ Currently implemented:
 Future ideeas:
 - Grid System (guides / snap to grid)
 - Step Transforms (how much things should move! currently the mouse dictates the ammount of movement, not very precises is it..)
+
+### IMPORTANT
+You must use **HiDef** as your GraphicsProfile for DirectX projects! 
 
 ### How it works
 The Gizmos are controlled by a class names `GizmoManager`. Besides Updating and Rendering the Gizmos, this class also contains the Selection functionality of the entities that inherit the `ISelectable` interface.
